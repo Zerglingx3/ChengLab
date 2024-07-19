@@ -1,5 +1,7 @@
 import requests
 import json
+
+#API request for articles containing drug name only
 """
 def search_pubmed(drug_name, max_results=6):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
@@ -13,7 +15,7 @@ def search_pubmed(drug_name, max_results=6):
     article_ids = response.json()['esearchresult']['idlist']
     return article_ids
 """
-
+#API request for articles containing drug name AND Alzheimer disease
 def search_pubmed(drug_name, max_results=6):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
     query = f'"{drug_name}"[Title/Abstract] AND "alzheimer disease"[MeSH Terms]'
